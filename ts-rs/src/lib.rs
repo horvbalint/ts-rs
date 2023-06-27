@@ -562,6 +562,12 @@ impl_primitives! { ordered_float::OrderedFloat<f64> => "number" }
 #[cfg(feature = "bson-uuid-impl")]
 impl_primitives! { bson::Uuid => "string" }
 
+#[cfg(feature = "bson-oid-impl")]
+impl_primitives! { bson::oid::ObjectId => "string" }
+
+#[cfg(feature = "bson-datetime-impl")]
+impl_primitives! { bson::datetime::DateTime => "Date" }
+
 #[cfg(feature = "indexmap-impl")]
 impl_shadow!(as Vec<T>: impl<T: TS> TS for indexmap::IndexSet<T>);
 
